@@ -1,0 +1,46 @@
+{
+  "header": "Add line",
+  "fields": [
+    {
+      "name": "key",
+      "label": "Key",
+      "type": "input",
+      "required": true
+    },
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "input",
+      "required": true
+    },
+    {
+      "name": "shortName",
+      "label": "Short name",
+      "type": "input",
+      "required": true
+    },
+    {
+      "name": "year",
+      "label": "Year",
+      "type": "input",
+      "fieldProps": {
+        "type": "number"
+      },
+      "required": true
+    },
+    {
+      "name": "colour",
+      "label": "Color",
+      "type": "colorSelector",
+      "valueProp": "color",
+      "required": true
+    },
+    {
+      "name": "fontColour",
+      "label": "Font Color",
+      "type": "colorSelector",
+      "valueProp": "color",
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "email",
+    "label": "Email Address",
+    "type": "input",
+    "required": true
+  },
+  {
+    "name": "password",
+    "label": "Password",
+    "type": "input",
+    "required": true,
+    "fieldProps": {
+      "type": "password"
+    }
+  }
+]

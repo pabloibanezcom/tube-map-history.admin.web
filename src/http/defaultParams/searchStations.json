@@ -1,0 +1,19 @@
+{
+  "limit": 25,
+  "populate": [
+    {
+      "path": "connections",
+      "populate": [
+        {
+          "path": "stations",
+          "select": "name year"
+        },
+        {
+          "path": "line",
+          "select": "name shortName colour fontColour"
+        }
+      ],
+      "select": "stations line year"
+    }
+  ]
+}

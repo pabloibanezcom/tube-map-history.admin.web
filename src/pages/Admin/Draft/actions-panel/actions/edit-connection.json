@@ -1,0 +1,40 @@
+{
+  "header": "Edit connection",
+  "fields": [
+    {
+      "name": "line",
+      "label": "Line",
+      "type": "selectorLine",
+      "required": true
+    },
+    {
+      "name": "from",
+      "label": "From",
+      "type": "selectorStation",
+      "required": true
+    },
+    {
+      "name": "to",
+      "label": "To",
+      "type": "selectorStation",
+      "required": true
+    },
+    {
+      "name": "year",
+      "label": "Opened",
+      "type": "input",
+      "fieldProps": {
+        "type": "number"
+      },
+      "required": true
+    },
+    {
+      "name": "yearEnd",
+      "label": "Closed",
+      "type": "input",
+      "fieldProps": {
+        "type": "number"
+      }
+    }
+  ]
+}

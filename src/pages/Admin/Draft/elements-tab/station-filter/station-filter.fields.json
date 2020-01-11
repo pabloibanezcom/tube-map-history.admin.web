@@ -1,0 +1,26 @@
+[
+  {
+    "name": "line",
+    "type": "selector",
+    "fieldProps": {
+      "className": "width-150",
+      "nullOption": {
+        "_id": null,
+        "shortName": "All lines"
+      },
+      "maxOptions": 20,
+      "valueProp": "_id",
+      "optionClassName": "p-0",
+      "nameProp": "shortName",
+      "customProp": "line"
+    }
+  },
+  {
+    "name": "stationName",
+    "type": "input",
+    "fieldProps": {
+      "placeholder": "Search by name..."
+    },
+    "minStr": 3
+  }
+]

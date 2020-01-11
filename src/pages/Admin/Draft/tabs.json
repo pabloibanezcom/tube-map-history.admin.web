@@ -1,0 +1,17 @@
+[
+  {
+    "id": "line",
+    "name": "Lines",
+    "icon": "lines"
+  },
+  {
+    "id": "station",
+    "name": "Stations",
+    "icon": "tube-logo"
+  },
+  {
+    "id": "connection",
+    "name": "Connections",
+    "icon": "connection"
+  }
+]

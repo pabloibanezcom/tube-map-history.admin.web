@@ -1,0 +1,6 @@
+.selector-line {
+  padding: 8px 12px;
+  &.selector-option-selected {
+    padding: 0 8px;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "header": "Delete draft",
+  "question": "Are you sure you want to delete this draft?",
+  "dynamicInstruction": "deleteDraftInstruction",
+  "fields": [
+    {
+      "name": "deleteName",
+      "label": "Name",
+      "type": "input",
+      "required": true
+    }
+  ]
+}

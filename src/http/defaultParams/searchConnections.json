@@ -1,0 +1,21 @@
+{
+  "limit": 25,
+  "populate": [
+    {
+      "path": "line",
+      "select": "name shortName colour fontColour"
+    },
+    {
+      "path": "stations",
+      "select": "name draft",
+      "populate": {
+        "path": "draft",
+        "select": "town",
+        "populate": {
+          "path": "town",
+          "select": "logo"
+        }
+      }
+    }
+  ]
+}

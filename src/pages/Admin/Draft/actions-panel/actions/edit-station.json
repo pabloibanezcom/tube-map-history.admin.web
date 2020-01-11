@@ -1,0 +1,28 @@
+{
+  "header": "Edit station",
+  "fields": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "input",
+      "required": true
+    },
+    {
+      "name": "year",
+      "label": "Opened",
+      "type": "input",
+      "fieldProps": {
+        "type": "number"
+      },
+      "required": true
+    },
+    {
+      "name": "yearEnd",
+      "label": "Closed",
+      "type": "input",
+      "fieldProps": {
+        "type": "number"
+      }
+    }
+  ]
+}

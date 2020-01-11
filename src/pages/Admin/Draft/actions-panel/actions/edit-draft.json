@@ -1,0 +1,17 @@
+{
+  "header": "Edit draft",
+  "fields": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "input",
+      "required": true
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "input",
+      "required": true
+    }
+  ]
+}

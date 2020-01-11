@@ -1,0 +1,3 @@
+export const GET_TOWNS_START = 'GET_TOWNS_START';
+export const GET_TOWNS_SUCCESS = 'GET_TOWNS_SUCCESS';
+export const GET_TOWNS_FAIL = 'GET_TOWNS_FAIL';
