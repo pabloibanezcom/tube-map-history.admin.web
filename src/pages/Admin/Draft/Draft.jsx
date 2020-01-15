@@ -4,12 +4,15 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { LoadingSpinner, TabMenu } from 'react-tube-kit';
 import {
+  addLineStart,
   changeElementsType,
   deleteDraftStart,
+  deleteLineStart,
   finishAction,
   getDraftStart,
   startAction,
-  updateDraftStart
+  updateDraftStart,
+  updateLineStart
 } from 'store/admin/actions';
 import ActionButtons from './action-buttons/action-buttons';
 import ActionsPanel from './actions-panel/actions-panel';
@@ -25,6 +28,9 @@ const Draft = ({
   changeTab,
   deleteDraft,
   editDraft,
+  addLine,
+  editLine,
+  deleteLine,
   _startAction,
   _finishAction
 }) => {
@@ -43,10 +49,19 @@ const Draft = ({
     if (actionName === 'EditDraft') {
       editDraft(newValue);
     }
+    if (actionName === 'AddLine') {
+      addLine(newValue);
+    }
+    if (actionName === 'EditLine') {
+      editLine(newValue);
+    }
+    if (actionName === 'DeleteLine') {
+      deleteLine(newValue._id);
+    }
   };
 
   return (
-    <div>
+    <div className="container pt-4 pt-md-8 pm-8">
       {draft ? (
         <>
           <div className="row mb-4 mb-md-8">
@@ -67,7 +82,7 @@ const Draft = ({
                   loading={action ? true : false}
                   className="d-none d-md-block"
                 />
-                <TownCard draft={draft} town={draft.town} className="mb-8" />
+                <TownCard size="lg" draft={draft} town={draft.town} className="mb-8" showLink />
                 <ActionButtons
                   draft={draft}
                   onEditDraft={() => _startAction('EditDraft', draft)}
@@ -131,7 +146,10 @@ const mapDispatchToProps = dispatch => {
     changeTab: elementsType => dispatch(changeElementsType(elementsType)),
     getDraft: draftId => dispatch(getDraftStart(draftId)),
     deleteDraft: draftId => dispatch(deleteDraftStart(draftId)),
-    editDraft: draft => dispatch(updateDraftStart(draft))
+    editDraft: draft => dispatch(updateDraftStart(draft)),
+    addLine: line => dispatch(addLineStart(line)),
+    editLine: line => dispatch(updateLineStart(line)),
+    deleteLine: lineId => dispatch(deleteLineStart(lineId))
   };
 };
 

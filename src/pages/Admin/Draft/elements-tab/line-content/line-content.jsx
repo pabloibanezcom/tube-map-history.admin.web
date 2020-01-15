@@ -46,7 +46,7 @@ const LineContent = ({ bindings: { _startAction }, element }) => {
           </Button>
         </div>
         <div className="col-md-4">
-          <Button block outline color="danger">
+          <Button block outline color="danger" onClick={() => _startAction('DeleteLine', element)}>
             Delete line
           </Button>
         </div>

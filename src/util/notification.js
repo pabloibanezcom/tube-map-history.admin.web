@@ -1,11 +1,17 @@
+import {
+  error as errorNotification,
+  info as infoNotification,
+  warning as wanrningNotification
+} from 'react-tube-kit';
+
 export const info = text => {
-  console.log(text);
+  infoNotification(text);
 };
 
 export const warning = text => {
-  console.log(text);
+  wanrningNotification(text);
 };
 
 export const error = text => {
-  console.log(text);
+  errorNotification(text);
 };

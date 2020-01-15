@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { LayoutWrapper } from 'react-tube-kit';
+import { Button, LayoutWrapper } from 'react-tube-kit';
 import { getOwnUserStart } from 'store/admin/actions';
 import routes from './routes';
 
@@ -12,6 +12,14 @@ const Admin = ({ match, loading, user, getUser }) => {
     }
   }, [getUser, user]);
 
+  const headerRightContent = (
+    <div>
+      <Button icon="person" color="transparent" uppercase={false}>
+        My account
+      </Button>
+    </div>
+  );
+
   return (
     <LayoutWrapper
       loading={loading}
@@ -19,8 +27,9 @@ const Admin = ({ match, loading, user, getUser }) => {
       sideNavbarEnabled={false}
       bottomMenuEnabled={false}
       headerTitleDisplay="xs-"
+      headerRightContent={headerRightContent}
     >
-      <div className="container pt-4 pt-md-8 pm-8">{routes(match.path)}</div>
+      {routes(match.path)}
     </LayoutWrapper>
   );
 };

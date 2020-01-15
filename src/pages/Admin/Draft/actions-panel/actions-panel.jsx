@@ -10,6 +10,8 @@ const ActionsPanel = ({ draft, actionName, value, onCancel, onSubmit }) => {
     switch (instructioName) {
       case 'deleteDraftInstruction':
         return `To delete the draft <b>${draft.name}</b>, type the name to confirm.`;
+      case 'deleteLineInstruction':
+        return `To delete the line <b>${value.name}</b>, type the name to confirm.`;
       default:
         return null;
     }
@@ -20,6 +22,14 @@ const ActionsPanel = ({ draft, actionName, value, onCancel, onSubmit }) => {
       if (evt.deleteName !== draft.name) {
         setFormErrors([
           { name: 'deleteName', type: 'noNameMatch', message: 'Name must be same as draft name' }
+        ]);
+        return;
+      }
+    }
+    if (actionName === 'DeleteLine') {
+      if (evt.deleteName !== value.name) {
+        setFormErrors([
+          { name: 'deleteName', type: 'noNameMatch', message: 'Name must be same as line name' }
         ]);
         return;
       }

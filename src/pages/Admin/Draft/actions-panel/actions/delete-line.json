@@ -1,0 +1,13 @@
+{
+  "header": "Delete line",
+  "question": "Are you sure you want to delete this line?",
+  "dynamicInstruction": "deleteLineInstruction",
+  "fields": [
+    {
+      "name": "deleteName",
+      "label": "Name",
+      "type": "input",
+      "required": true
+    }
+  ]
+}
