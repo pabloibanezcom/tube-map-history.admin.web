@@ -1,8 +1,9 @@
 import * as actionTypes from './actionTypes';
 
-export const loginStart = (email, password) => {
+export const loginStart = (history, email, password) => {
   return {
     type: actionTypes.LOGIN_START,
+    history,
     email,
     password
   };
@@ -14,9 +15,9 @@ export const loginSuccess = () => {
   };
 };
 
-export const loginFail = error => {
+export const loginFail = errors => {
   return {
     type: actionTypes.LOGIN_FAIL,
-    error
+    errors
   };
 };

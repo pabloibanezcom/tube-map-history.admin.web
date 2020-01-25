@@ -1,4 +1,3 @@
-import { push } from 'connected-react-router';
 import Api from 'http';
 import { put } from 'redux-saga/effects';
 import { deleteDraftFail, deleteDraftSuccess, finishAction } from 'store/admin/actions';
@@ -9,7 +8,7 @@ export function* deleteDraftSagaStart(action) {
     yield Api.draft.delete(action.draftId);
     yield put(deleteDraftSuccess());
     yield put(finishAction());
-    yield put(push('/admin'));
+    // yield put(push('/admin'));
     info('Draft was deleteded succesully');
   } catch (err) {
     error('Something went wrong!');

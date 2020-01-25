@@ -1,0 +1,26 @@
+[
+  {
+    "name": "country",
+    "type": "selector",
+    "fieldProps": {
+      "className": "width-150",
+      "nullOption": {
+        "_id": null,
+        "name": "All countries"
+      },
+      "maxOptions": 20,
+      "valueProp": "_id",
+      "optionClassName": "p-0",
+      "nameProp": "name",
+      "customProp": "town"
+    }
+  },
+  {
+    "name": "townName",
+    "type": "input",
+    "fieldProps": {
+      "placeholder": "Search by name..."
+    },
+    "minStr": 3
+  }
+]

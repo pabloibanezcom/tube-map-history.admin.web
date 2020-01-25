@@ -1,4 +1,3 @@
-import { push } from 'connected-react-router';
 import Api from 'http';
 import { put } from 'redux-saga/effects';
 import { addDraftFail, addDraftSuccess } from 'store/admin/actions';
@@ -8,7 +7,7 @@ export function* addDraftSagaStart(action) {
   try {
     yield Api.draft.add(action.town, action.draft);
     yield put(addDraftSuccess());
-    yield put(push('/admin'));
+    // yield put(push('/admin'));
     info('Draft was created succesully');
   } catch (err) {
     error('Something went wrong!');

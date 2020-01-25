@@ -1,4 +1,3 @@
-import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 // Admin
@@ -17,16 +16,15 @@ export const getStore = history => {
 
   const sagaMiddleware = createSagaMiddleware();
 
-  const createRootReducer = _history =>
+  const createRootReducer = () =>
     combineReducers({
-      router: connectRouter(_history),
       auth: authReducer,
       admin: adminReducer
     });
 
   const store = createStore(
     createRootReducer(history),
-    composeEnhancers(applyMiddleware(sagaMiddleware, routerMiddleware(history)))
+    composeEnhancers(applyMiddleware(sagaMiddleware))
   );
 
   sagaMiddleware.run(watchAuth);

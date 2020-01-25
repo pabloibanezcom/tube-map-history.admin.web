@@ -1,24 +1,24 @@
+import { HeaderUserMenu } from 'components';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { Button, LayoutWrapper } from 'react-tube-kit';
+import { useHistory, withRouter } from 'react-router-dom';
+import { LayoutWrapper } from 'react-tube-kit';
 import { getOwnUserStart } from 'store/admin/actions';
 import routes from './routes';
 
 const Admin = ({ match, loading, user, getUser }) => {
+  const history = useHistory();
+
   useEffect(() => {
-    if (!user) {
+    if (!localStorage.getItem('auth')) {
+      history.push('/login');
+    } else if (!user) {
       getUser();
     }
-  }, [getUser, user]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const headerRightContent = (
-    <div>
-      <Button icon="person" color="transparent" uppercase={false}>
-        My account
-      </Button>
-    </div>
-  );
+  const headerRightContent = <HeaderUserMenu user={user} />;
 
   return (
     <LayoutWrapper
@@ -29,7 +29,7 @@ const Admin = ({ match, loading, user, getUser }) => {
       headerTitleDisplay="xs-"
       headerRightContent={headerRightContent}
     >
-      {routes(match.path)}
+      {user ? routes(match.path, user) : null}
     </LayoutWrapper>
   );
 };

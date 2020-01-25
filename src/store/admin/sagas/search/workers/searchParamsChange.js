@@ -24,7 +24,7 @@ export function* searchParamsChangeSagaStart(action) {
     }
 
     const response = yield Api[elementsType].search(
-      state.admin.draft._id,
+      state.admin.draft ? state.admin.draft._id : null,
       searchParams,
       pagination
     );

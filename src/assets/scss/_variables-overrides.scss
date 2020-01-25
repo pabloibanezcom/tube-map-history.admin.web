@@ -1,14 +1,11 @@
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1350px
-);
-
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1290px
+$custom-container-max-widths: (
+  576px: 540px,
+  768px: 720px,
+  992px: 960px,
+  1200px: 1160px,
+  1300px: 1260px,
+  1400px: 1360px,
+  1500px: 1460px,
+  1600px: 1560px,
+  1700px: 1600px
 );

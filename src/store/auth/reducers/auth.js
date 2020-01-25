@@ -1,15 +1,20 @@
+import transformError from 'util/transformError';
 import updateObject from 'util/updateObject';
 
 const initialState = {
-  loading: false
+  loading: false,
+  errors: []
 };
 
 const startLoading = state => {
-  return updateObject(state, { loading: true });
+  return updateObject(state, { loading: true, errors: [] });
 };
 
-const stopLoading = state => {
-  return updateObject(state, { loading: false });
+const stopLoading = (state, action) => {
+  return updateObject(state, {
+    loading: false,
+    errors: action && action.errors ? action.errors.map(err => transformError(err, 'login')) : []
+  });
 };
 
 const checkActionType = (action, type) => {
@@ -21,7 +26,7 @@ export const authReducer = (state = initialState, action) => {
     return startLoading(state);
   }
   if (checkActionType(action.type, 'SUCCESS') || checkActionType(action.type, 'FAIL')) {
-    return stopLoading(state);
+    return stopLoading(state, action);
   }
   return state;
 };

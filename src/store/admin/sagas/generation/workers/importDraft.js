@@ -1,4 +1,3 @@
-import { push } from 'connected-react-router';
 import Api from 'http';
 import { put } from 'redux-saga/effects';
 import {
@@ -13,7 +12,7 @@ export function* importDraftSagaStart(action) {
   try {
     yield Api.generation.importDraft(action.draftId, action.file);
     yield put(importDraftSuccess());
-    yield put(push(`/admin/draft/${action.draftId}/lines`));
+    // yield put(push(`/admin/draft/${action.draftId}/lines`));
     yield put(getDraftStart(action.draftId));
     yield put(searchParamsChangeStart());
     info('Draft was imported succesully');

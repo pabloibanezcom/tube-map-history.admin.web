@@ -38,7 +38,7 @@ const ActionsPanel = ({ draft, actionName, value, onCancel, onSubmit }) => {
   };
 
   return (
-    <Panel header={actions[actionName].header} headerColor="secondary">
+    <Panel headerText={actions[actionName].header} headerColor="secondary">
       {actions[actionName].question ? (
         <h4 className="text-center">{actions[actionName].question}</h4>
       ) : null}

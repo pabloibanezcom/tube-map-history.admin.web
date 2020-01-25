@@ -5,6 +5,7 @@ import { Form } from 'react-tube-kit';
 import formFields from './station-filter.fields.json';
 
 const StationFilter = ({ draft, onSubmit }) => {
+  console.log(draft.lines);
   formFields[0].fieldProps.options = draft.lines;
 
   formFields[0].fieldProps.custom = SelectorLine;

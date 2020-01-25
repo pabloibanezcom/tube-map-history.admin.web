@@ -126,6 +126,7 @@ const ElementsTab = ({
               <Button
                 outline
                 icon="add"
+                size="sm"
                 onClick={() =>
                   _startAction(`Add${elementsType.charAt(0).toUpperCase() + elementsType.slice(1)}`)
                 }
